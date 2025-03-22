@@ -23,10 +23,8 @@ def send_email(recipient, subject, message, message_type):
     try:
         server = smtplib.SMTP(smtp_server, smtp_port)
         server.ehlo()
-        # Uncomment if you need to use TLS
         server.starttls()
         server.ehlo()
-        # If authentication is required:
         server.login("prokhor03@gmail.com", password)
         server.send_message(msg)
         server.quit()
